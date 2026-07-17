@@ -1,14 +1,27 @@
 # entre
 
-`entre rust <target-path>` creates the built-in Rust project with MIT license, Rust `.gitignore`, and release optimizations.
+## Projekt
 
-`entre <language> <template> <target-path>` creates a project from `templates/<language>/<template>/project.toml`.
+`entre` ist ein Rust-CLI zum Erzeugen neuer Projekte aus sprachspezifischen TOML-Templates. Das Standard-Rust-Projekt enthält Quellcode, README, MIT-Lizenz, `.gitignore` und Release-Optimierungen.
 
-## Template architecture
+## Verwendung
 
-- `src/templates.rs`: strict TOML model, loader, validation, rendering, and safe file writes.
-- `src/langs/rust.rs`: Cargo initialization, Rust defaults, dependency installation, and formatting.
-- `templates/<language>/<template>/files/*.toml`: deterministic custom files overriding defaults by target path.
-- `assets/`: embedded default files, `.gitignore` presets, and license texts.
+```bash
+# Standard-Rust-Projekt
+entre rust ./mein-projekt
 
-Manifests are package-manager managed. Templates cannot define commands. Python and custom manifests currently return explicit unsupported errors. Existing symlink path components are rejected; concurrent filesystem replacement attacks are outside the current local-CLI threat model.
+# Benanntes Template
+entre rust cli_basic ./mein-projekt
+```
+
+Der Zielordner muss neu oder leer sein.
+
+## Installation
+
+Rust und Cargo müssen installiert sein. Im Repository ausführen:
+
+```bash
+cargo install --path .
+```
+
+Danach steht `entre` im `PATH` bereit.
