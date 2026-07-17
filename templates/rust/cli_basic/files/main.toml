@@ -1,0 +1,23 @@
+path = "src/main.rs"
+mode = "replace"
+render = true
+
+content = '''
+use anyhow::Result;
+use clap::Parser;
+
+#[derive(Debug, Parser)]
+#[command(name = "{{ project_name }}")]
+struct Cli {
+    #[arg(short, long, default_value = "World")]
+    name: String,
+}
+
+fn main() -> Result<()> {
+    let cli = Cli::parse();
+
+    println!("Hello, {}!", cli.name);
+
+    Ok(())
+}
+'''

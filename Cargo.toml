@@ -3,7 +3,12 @@ name = "entremetier"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]]
+name = "entre"
+path = "src/main.rs"
+
 [dependencies]
+anyhow = "1.0"
 clap = { version = "4.6.1", features = ["derive"] }
 serde = { version = "1.0", features = ["derive"] }
 toml = "0.9"

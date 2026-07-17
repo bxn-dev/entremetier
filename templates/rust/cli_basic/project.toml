@@ -1,0 +1,30 @@
+schema_version = 1
+language = "rust"
+
+[template]
+name = "cli_basic"
+description = "Ein einfaches Rust-CLI-Projekt"
+
+[project]
+type = "binary"
+edition = "2024"
+
+[manifest]
+mode = "managed"
+
+[defaults]
+source_files = true
+readme = true
+gitignore = true
+license = true
+tests = false
+
+[license]
+name = "MIT"
+
+[[dependencies]]
+name = "clap"
+features = ["derive"]
+
+[[dependencies]]
+name = "anyhow"

@@ -1,0 +1,23 @@
+schema_version = 1
+language = "rust"
+
+[template]
+name = "default"
+description = "Ein minimales optimiertes Rust-Binary-Projekt"
+
+[project]
+type = "binary"
+edition = "2024"
+
+[manifest]
+mode = "managed"
+
+[defaults]
+source_files = true
+readme = true
+gitignore = true
+license = true
+tests = false
+
+[license]
+name = "MIT"

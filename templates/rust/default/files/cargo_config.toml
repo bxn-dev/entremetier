@@ -1,0 +1,10 @@
+path = ".cargo/config.toml"
+mode = "replace"
+render = false
+
+content = '''
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+'''
